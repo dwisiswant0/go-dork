@@ -6,7 +6,7 @@ on:
   pull_request:
   
 jobs:          
-  deps:
+  build:
     name: Dependencies
     runs-on: ubuntu-latest 
     steps:
@@ -22,19 +22,6 @@ jobs:
         run: |
           go get github.com/fatih/color
           go get github.com/projectdiscovery/gologger
-
-  build:
-    needs: deps
-    name: Build
-    runs-on: ubuntu-latest 
-    steps:
-      - name: Set up Go
-        uses: actions/setup-go@v2
-        with:
-          go-version: 1.14
-
-      - name: Check out code
-        uses: actions/checkout@v2
 
       - name: Build
         run: go build .
