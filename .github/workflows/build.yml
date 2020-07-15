@@ -6,8 +6,8 @@ on:
   pull_request:
   
 jobs:          
-  build:
-    name: Build
+  deps:
+    name: Dependencies
     runs-on: ubuntu-latest 
     steps:
       - name: Set up Go
@@ -20,7 +20,20 @@ jobs:
 
       - name: Dependencies
         run: go get ./...
-        working-directory: ../
+        working-directory: ./
+
+  build:
+    needs: deps
+    name: Build
+    runs-on: ubuntu-latest 
+    steps:
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.14
+
+      - name: Check out code
+        uses: actions/checkout@v2
 
       - name: Build
         run: go build .
