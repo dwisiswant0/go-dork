@@ -30,7 +30,7 @@ There are also various search engines supported by go-dork, including Google, Sh
 - If you have go compiler installed and configured:
 
 ```bash
-> GO111MODULE=on go get -v github.com/dwisiswant0/go-dork
+> GO111MODULE=on go get -v github.com/dwisiswant0/go-dork/...
 ```
 
 ## Usage
