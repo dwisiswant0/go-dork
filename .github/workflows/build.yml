@@ -20,7 +20,7 @@ jobs:
 
       - name: Dependencies
         run: go get ./...
-        working-directory: ./
+        working-directory: ../
 
       - name: Build
         run: go build .
