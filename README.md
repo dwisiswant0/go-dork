@@ -5,7 +5,7 @@
 
 The fastest dork scanner written in Go.
 
-<img src="https://user-images.githubusercontent.com/25837540/87547986-153f6a80-c6d6-11ea-92ef-bdc23d60f79e.png" height="350">
+<img src="https://user-images.githubusercontent.com/25837540/87547986-153f6a80-c6d6-11ea-92ef-bdc23d60f79e.png" height="350" width="566">
 
 There are also various search engines supported by go-dork, including Google, Shodan, Bing, Duck, Yahoo and Ask.
 
