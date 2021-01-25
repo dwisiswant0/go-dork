@@ -22,7 +22,7 @@ import (
 
 func Err(e error) {
 	if e != nil {
-		log.Errorf("%s\n", e)
+		log.Error().Msgf("%s\n", e)
 		os.Exit(1)
 	}
 }
@@ -108,19 +108,19 @@ func main() {
 	if !silent {
 		c := color.New(color.FgCyan, color.Bold)
 		c.Println(banner)
-		log.Labelf("Use at your own risk! Developers assume no responsibility")
-		log.Labelf("If your IP address has been blocked by search engine providers or other reason.")
-		log.Infof("Query : %s", query)
-		log.Infof("Page  : %s", strconv.Itoa(page))
+		log.Warning().Msgf("Use at your own risk! Developers assume no responsibility")
+		log.Warning().Msgf("If your IP address has been blocked by search engine providers or other reason.")
+		log.Info().Msgf("Query : %s", query)
+		log.Info().Msgf("Page  : %s", strconv.Itoa(page))
 		if proxy != "" {
-			log.Infof("Proxy : %s", proxy)
+			log.Info().Msgf("Proxy : %s", proxy)
 		}
 		if len(headers) > 0 {
 			for _, h := range headers {
-				log.Infof("Header: %s", h)
+				log.Info().Msgf("Header: %s", h)
 			}
 		}
-		log.Infof("Engine: %s\n\n", strings.Title(engine))
+		log.Info().Msgf("Engine: %s\n\n", strings.Title(engine))
 	}
 
 	stat, _ := os.Stdin.Stat()
@@ -141,7 +141,7 @@ func main() {
 		}
 	} else {
 		if query == "" {
-			log.Fatalf("Missing required -q flag!")
+			log.Fatal().Msgf("Missing required -q flag!")
 			os.Exit(2)
 		}
 
