@@ -19,6 +19,7 @@ There are also various search engines supported by go-dork, including Google, Sh
   - [Adding custom headers](#adding-headers)
   - [Using proxy](#using-proxy)
   - [Chained with other tools](#chained-with-other-tools)
+- [Supporting Materials](#supporting-materials)
 - [Help & Bugs](#help--bugs)
 - [TODOs](#todos)
 - [License](#license)
@@ -119,6 +120,10 @@ If you want to chain the `go-dork` results with another tool, use the `-s` flag.
 > cat dorks.txt | go-dork | pwntools
 > go-dork -q "inurl:'/secure' intext:'jira' site:org" -s | nuclei -t workflows/jira-exploitaiton-workflow.yaml
 ```
+
+## Supporting Materials
+
+- Hazana. _[Dorking on Steroids](https://hazanasec.github.io/2021-03-11-Dorking-on-Steriods/)_, 11 Mar. 2021, https://hazanasec.github.io/2021-03-11-Dorking-on-Steriods/.
 
 ## Help & Bugs
 
