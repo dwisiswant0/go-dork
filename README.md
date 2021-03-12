@@ -5,7 +5,7 @@
 
 The fastest dork scanner written in Go.
 
-<img src="https://user-images.githubusercontent.com/25837540/87547986-153f6a80-c6d6-11ea-92ef-bdc23d60f79e.png" height="350" width="566">
+<img src="https://user-images.githubusercontent.com/25837540/111008561-f22f9c80-83c3-11eb-8500-fb63456a4614.png" height="350">
 
 There are also various search engines supported by go-dork, including Google, Shodan, Bing, Duck, Yahoo and Ask.
 
@@ -16,8 +16,8 @@ There are also various search engines supported by go-dork, including Google, Sh
   - [Querying](#querying)
   - [Defining engine](#defining-engine)
   - [Pagination](#pagination)
-  - [Adding headers](#adding-headers)
-  - [Using Proxy](#using-proxy)
+  - [Adding custom headers](#adding-headers)
+  - [Using proxy](#using-proxy)
   - [Chained with other tools](#chained-with-other-tools)
 - [Help & Bugs](#help--bugs)
 - [TODOs](#todos)
@@ -27,17 +27,17 @@ There are also various search engines supported by go-dork, including Google, Sh
 ## Install
 
 - [Download](https://github.com/dwisiswant0/go-dork/releases) a prebuilt binary from releases page, unpack and run! or
-- If you have go compiler installed and configured:
+- If you have [Go 1.15+](https://golang.org/dl/) compiler installed and configured:
 
 ```bash
-> GO111MODULE=on go get -v github.com/dwisiswant0/go-dork/...
+> GO111MODULE=on go get -v -u dw1.io/go-dork
 ```
 
 ## Usage
 
 ### Basic Usage
 
-Simply, go-dork can be run with:
+It's fairly simple, go-dork can be run with:
 
 ```bash
 > go-dork -q "inurl:'...'"
@@ -60,7 +60,6 @@ This will display help for the tool. Here are all the switches it supports.
 | -H/--header    | Pass custom header to search engine                  |
 | -x/--proxy     | Use proxy to surfing                                 |
 | -s/--silent    | Silent mode, prints only results in output           |
-| -nc/--no-color | Disable colored output results                       |
 
 ### Querying
 
@@ -87,7 +86,7 @@ This will do a search by the Bing engine.
 
 ### Pagination
 
-By default, go-dork selects the first page, you can customize using the `-p` flag.
+By default, go-dork scrapes the first page, you can customize using the `-p` flag.
 
 ```bash
 > go-dork -q "intext:'jira'" -p 5
@@ -95,7 +94,7 @@ By default, go-dork selects the first page, you can customize using the `-p` fla
 
 It will search sequentially from pages 1 to 5.
 
-### Adding Headers
+### Adding custom headers
 
 Maybe you want to use a search filter on the Shodan engine, you can use custom headers to add cookies or other header parts.
 
@@ -104,7 +103,7 @@ Maybe you want to use a search filter on the Shodan engine, you can use custom h
   --engine shodan -H "Cookie: ..." -H "User-Agent: ..."
 ```
 
-### Using Proxy
+### Using proxy
 
 Using a proxy, this can also be useful if Google or other engines meet Captcha.
 
@@ -117,6 +116,7 @@ Using a proxy, this can also be useful if Google or other engines meet Captcha.
 If you want to chain the `go-dork` results with another tool, use the `-s` flag.
 
 ```bash
+> cat dorks.txt | go-dork | pwntools
 > go-dork -q "inurl:'/secure' intext:'jira' site:org" -s | nuclei -t workflows/jira-exploitaiton-workflow.yaml
 ```
 
@@ -128,13 +128,9 @@ If you are still confused or found a bug, please [open the issue](https://github
 
 - [ ] Fixes Yahoo regexes
 - [ ] Fixes Google regexes if using custom User-Agent
-- [ ] Stopping if there's no results & page flag was set
+- [x] Stopping if there's no results & page flag was set
 - [ ] DuckDuckGo next page
 
 ## License
 
 MIT. See `LICENSE` for more details.
-
-## Version
-
-**Current version is 0.0.1** and still development.

@@ -40,7 +40,7 @@ func init() {
 			"                               (options: Google, Shodan, Bing, Duck, Yahoo, Ask)",
 			"  -p, --page <i>               Specify number of pages (default: 1)",
 			"  -H, --header <header>        Pass custom header to search engine",
-			"  -x, --proxy <proxy_url>      Use proxy to surfing",
+			"  -x, --proxy <proxy_url>      Use proxy to surfing (HTTP/SOCKSv5 proxy)",
 			"  -s, --silent                 Silent mode",
 			"\n",
 		}
