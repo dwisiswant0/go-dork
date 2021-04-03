@@ -1,7 +1,7 @@
 package main
 
 const (
-	Version = "v1.0.0"
+	Version = "v1.0.1"
 	banner  = `
                    __         __  
   ___ ____  ______/ /__  ____/ /__
