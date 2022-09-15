@@ -102,7 +102,7 @@ iterPage:
 				break iterPage
 			}
 
-			fmt.Printf("%s\n", aurora.Green(url))
+			fmt.Printf("%s\n", url)
 		}
 
 		if opt.Engine == "duck" && p == 1 {
