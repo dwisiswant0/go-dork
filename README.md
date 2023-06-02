@@ -9,21 +9,22 @@ The fastest dork scanner written in Go.
 
 There are also various search engines supported by go-dork, including Google, Shodan, Bing, Duck, Yahoo and Ask.
 
-- [Install](#install)
-- [Usage](#usage)
-  - [Basic Usage](#basic-usage)
-  - [Flags](#flags)
-  - [Querying](#querying)
-  - [Defining engine](#defining-engine)
-  - [Pagination](#pagination)
-  - [Adding custom headers](#adding-headers)
-  - [Using proxy](#using-proxy)
-  - [Chained with other tools](#chained-with-other-tools)
-- [Supporting Materials](#supporting-materials)
-- [Help & Bugs](#help--bugs)
-- [TODOs](#todos)
-- [License](#license)
-- [Version](#version)
+- [go-dork](#go-dork)
+  - [Install](#install)
+    - [Docker option](#docker-option)
+  - [Usage](#usage)
+    - [Basic Usage](#basic-usage)
+    - [Flags](#flags)
+    - [Querying](#querying)
+    - [Defining engine](#defining-engine)
+    - [Pagination](#pagination)
+    - [Adding custom headers](#adding-custom-headers)
+    - [Using proxy](#using-proxy)
+    - [Chained with other tools](#chained-with-other-tools)
+  - [Supporting Materials](#supporting-materials)
+  - [Help \& Bugs](#help--bugs)
+  - [TODOs](#todos)
+  - [License](#license)
 
 ## Install
 
@@ -33,6 +34,18 @@ There are also various search engines supported by go-dork, including Google, Sh
 ```bash
 > GO111MODULE=on go install dw1.io/go-dork@latest
 ```
+
+### Docker option
+Clone the repository and build the image:
+```bash
+docker build -t go-dork .
+```
+
+Run the container:
+```bash
+docker run -it --rm go-dork -q "inurl:..."
+```
+
 
 ## Usage
 
