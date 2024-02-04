@@ -31,7 +31,7 @@ There are also various search engines supported by go-dork, including Google, Sh
 - If you have [Go 1.15+](https://golang.org/dl/) compiler installed and configured:
 
 ```bash
-> GO111MODULE=on go install dw1.io/go-dork@latest
+> GO111MODULE=on go install github.com/dwisiswant0/go-dork@latest
 ```
 
 ## Usage
